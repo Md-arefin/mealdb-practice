@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style/bootstrap.css">
     <link rel="stylesheet" href="./style/bootstrap.css.map">
     <link rel="stylesheet" href="./style/style.css">
-    <title>MealDB Practice</title>
+    <title>MealBD Practice</title>
 </head>
 
 <body>
@@ -29,9 +29,10 @@
                     <p class="text-white text-center fs-4 my-5">There are many variations of passages of Lorem Ipsum
                         available, but the majority have suffered alteration in some form, by injected humou.</p>
                     <div class="d-flex">
-                        <input id="search-field" type="text" class="form-control text-center fs-3" id="exampleFormControlInput1"
-                            placeholder="Search your meal">
-                        <button onclick="searchMeal()" type="button" class="btn btn-warning position-relative fw-bold">Search</button>
+                        <input id="search-field" type="text" class="form-control text-center fs-3"
+                            id="exampleFormControlInput1" placeholder="Search your meal">
+                        <button onclick="searchMeal()" type="button"
+                            class="btn btn-warning position-relative fw-bold">Search</button>
                     </div>
                 </div>
             </div>
@@ -40,8 +41,31 @@
         <section class="container my-5 py-5">
             <h1 class="text-center py-5">Your Favorite Food</h1>
             <!------------------------------- cards ---------------------------------->
-            <div id="meal-container" class="grid row row-cols-1 row-cols-md-3 gap-4 text-center mx-5 px-5">
+            <div id="meal-container" class="grid row row-cols-md-3  gap-4 text-center mx-5 px-5">
 
+            </div>
+        </section>
+        <!-------------------- Modal --------------------->
+        <section>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="mealModal" tabindex="-1" aria-labelledby="mealModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog  modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="mealModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

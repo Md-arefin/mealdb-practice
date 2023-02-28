@@ -12,7 +12,7 @@ const displayMeals = meals => {
     meals.forEach( meal => {
         console.log(meal);
         const mealDiv = document.createElement('div')
-        mealDiv.classList.add('card', 'mb-3')
+        mealDiv.classList.add('card')
         mealDiv.innerHTML = `
         <div class="row g-0">
             <div class="col-md-4">
@@ -23,6 +23,8 @@ const displayMeals = meals => {
                     <h5 class="card-title">${meal.strMeal}</h5>
                     <p class="card-text">Category: ${meal.strCategory}</p>
                     <p class="card-text"><small class="text-muted">Area: ${meal.strArea}</small></p>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mealModal">
+                    Learn more </button>
                 </div>
             </div>
         </div>
