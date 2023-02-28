@@ -1,18 +1,19 @@
-const loadMeals = () =>{
-    const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=chicken';
+const loadMeals = (searchText) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
     fetch(url)
-    .then(Response => Response.json())
-    .then(data => displayMeals(data.meals));
+        .then(Response => Response.json())
+        .then(data => displayMeals(data.meals));
 }
 
-const displayMeals = meals =>{
+const displayMeals = meals => {
     // console.log(meals);
-    meals.forEach( meal =>{
-        // console.log(meal);
-        const mealContainer = document.getElementById('meal-container');
+    const mealsContainer = document.getElementById('meal-container');
+    mealsContainer.innerText = '';
+    meals.forEach( meal => {
+        console.log(meal);
         const mealDiv = document.createElement('div')
-        mealDiv.classList.add('card', 'col-md-5', 'mb-3')
-        mealDiv.innerHTML =`
+        mealDiv.classList.add('card', 'mb-3')
+        mealDiv.innerHTML = `
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="${meal.strMealThumb}" class="img-fluid rounded-start" alt="...">
@@ -26,8 +27,14 @@ const displayMeals = meals =>{
             </div>
         </div>
         `;
-        mealContainer.appendChild(mealDiv);
+        mealsContainer.appendChild(mealDiv);
     })
 }
 
-loadMeals();
+const searchMeal = () => {
+    const searchText = document.getElementById('search-field').value;
+    // console.log(searchText);
+    loadMeals(searchText);
+}
+
+loadMeals("chicken");
