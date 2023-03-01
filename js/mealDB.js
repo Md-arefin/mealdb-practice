@@ -2,7 +2,10 @@ const loadMeals = (searchText) => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
     fetch(url)
         .then(Response => Response.json())
-        .then(data => displayMeals(data.meals));
+        .then(data => displayMeals(data.meals))
+        .catch(error =>{
+            console.log(error);
+        })
 }
 
 const displayMeals = meals => {
@@ -44,7 +47,10 @@ const LoadMealDetails = (idMeal) => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
     fetch(url)
     .then(res => res.json())
-    .then(data => displayMealDetails(data.meals[0]));
+    .then(data => displayMealDetails(data.meals[0]))
+    .catch(error =>{
+        console.log(error);
+    })
 }
 
 const displayMealDetails = meal =>{
